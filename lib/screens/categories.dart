@@ -6,10 +6,8 @@ import 'package:meals/screens/meals.dart';
 import 'package:meals/widgets/category_grid_item.dart';
 
 class CategoreiesScreen extends StatelessWidget {
-  final void Function(Meal meal) onToggleFavorite;
   final List<Meal> availableMeal;
-  const CategoreiesScreen(
-      {super.key, required this.onToggleFavorite, required this.availableMeal});
+  const CategoreiesScreen({super.key, required this.availableMeal});
   @override
   Widget build(BuildContext context) {
     return GridView(
@@ -40,7 +38,6 @@ class CategoreiesScreen extends StatelessWidget {
       return MealsScreen(
         title: category.title,
         meals: fliteredMeals,
-        onToggleFavorite: onToggleFavorite,
       );
     }));
   }
