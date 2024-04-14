@@ -73,11 +73,16 @@ class _CategoreiesScreenState extends State<CategoreiesScreen>
     final fliteredMeals = widget.availableMeal
         .where((meal) => meal.categories.contains(category.id))
         .toList();
-    Navigator.push(context, MaterialPageRoute(builder: (ctx) {
-      return MealsScreen(
-        title: category.title,
-        meals: fliteredMeals,
-      );
-    }));
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (ctx) {
+          return MealsScreen(
+            title: category.title,
+            meals: fliteredMeals,
+          );
+        },
+      ),
+    );
   }
 }
